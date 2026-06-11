@@ -2,6 +2,15 @@
 \newcommand{\En}[1]{\ifthenelse{\equal{\Lang}{en}}{#1}{}}
 \newcommand{\Exec}[1]{\ifthenelse{\equal{\Mode}{exec}}{#1}{}}
 \newcommand{\Op}[1]{\ifthenelse{\equal{\Mode}{op}}{#1}{}}
+\newcommand{\entry}[5]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.5cm}X@{}}
+    \includegraphics[width=1.1cm]{#5} &
+    \textbf{#1} \hfill #2\\[-0.1em]
+    & #3\\
+    & \textit{#4}
+  \end{tabularx}\vspace{0.5em}
+}
 
 \input{preamble.tex}
 \begin{document}
