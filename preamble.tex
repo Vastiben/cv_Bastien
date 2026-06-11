@@ -21,7 +21,15 @@
 \titleformat{\section}{\Large\bfseries\color{primary}}{}{0pt}{}[\vspace{-0.4em}\titlerule]
 \titlespacing*{\section}{0pt}{0.8em}{0.35em}
 \newcommand{\cvsub}[1]{\textit{\color{secondary}#1}}
-\newcommand{\entry}[4]{\textbf{#1} \hfill #2\\#3\\\textit{#4}\vspace{0.2em}}
+\newcommand{\entry}[5]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}p{1.5cm}X@{}}
+    \includegraphics[width=1.1cm]{#5} &
+    \textbf{#1} \hfill #2\\[-0.1em]
+    & #3\\
+    & \textit{#4}
+  \end{tabularx}\vspace{0.5em}
+}
 \newcommand{\entrytwo}[4]{\textbf{#1} \hfill #2\\#3\\#4\vspace{0.2em}}
 \newcommand{\contact}[3]{\faEnvelope~\href{mailto:#1}{#1}\hspace{1em}\faPhone~#2\hspace{1em}\faMapMarker*~#3}
 
