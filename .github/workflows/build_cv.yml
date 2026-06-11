@@ -6,13 +6,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - file: cv-fr-exec.tex
+            name: cv-fr-exec
+          - file: cv-fr-op.tex
+            name: cv-fr-op
+          - file: cv-en-exec.tex
+            name: cv-en-exec
+          - file: cv-en-op.tex
+            name: cv-en-op
     steps:
       - uses: actions/checkout@v5
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: cv-fr-exec.tex
+          root_file: ${{ matrix.file }}
+          compiler: latexmk
           args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
       - uses: actions/upload-artifact@v5
         with:
-          name: cv-fr-exec
-          path: cv-fr-exec.pdf
+          name: ${{ matrix.name }}
+          path: ${{ matrix.name }}.pdf
