@@ -1,9 +1,3 @@
-from pathlib import Path
-base = Path('output/cv_github_final_clean')
-wf = base/'.github/workflows/build.yml'
-wf.parent.mkdir(parents=True, exist_ok=True)
-wf.write_text(r'''name: build-cv)
-
 on:
   push:
     branches: [main]
@@ -12,26 +6,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - file: cv-fr-exec.tex
-            name: cv-fr-exec
-          - file: cv-fr-op.tex
-            name: cv-fr-op
-          - file: cv-en-exec.tex
-            name: cv-en-exec
-          - file: cv-en-op.tex
-            name: cv-en-op
     steps:
       - uses: actions/checkout@v4
       - uses: xu-cheng/latex-action@v3
         with:
-          root_file: ${{ matrix.file }}
+          root_file: cv-fr-exec.tex
           args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.name }}
-          path: ${{ matrix.name }}.pdf
-''', encoding='utf-8')
-print(wf)
+          name: cv-fr-exec
+          path: cv-fr-exec.pdf
