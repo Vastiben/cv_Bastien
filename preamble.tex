@@ -14,6 +14,10 @@
 \usepackage{ifthen}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{calc}
+
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt}
@@ -23,9 +27,7 @@
 \titleformat{\section}{\Large\bfseries\color{primary}}{}{0pt}{}[\vspace{-0.4em}\titlerule]
 \titlespacing*{\section}{0pt}{0.8em}{0.35em}
 \newcommand{\cvsub}[1]{\textit{#1}}
-\usepackage{tabularx}
-\usepackage{graphicx}
-\usepackage{calc}
+\newcommand{\contact}[3]{\faEnvelope~\href{mailto:#1}{#1}\hspace{1em}\faPhone~#2\hspace{1em}\faMapMarker*~#3}
 
 \newcommand{\entry}[5]{%
   \noindent
@@ -38,5 +40,5 @@
 }
 
 \newcommand{\entrytwo}[4]{\textbf{#1} \hfill #2\\#3\\#4\vspace{0.2em}}
-\newcommand{\contact}[3]{\faEnvelope~\href{mailto:#1}{#1}\hspace{1em}\faPhone~#2\hspace{1em}\faMapMarker*~#3}
+
 
