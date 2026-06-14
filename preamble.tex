@@ -40,6 +40,9 @@
 }
 
 
-\newcommand{\entrytwo}[4]{\textbf{#1} \hfill #2\\#3\\#4\vspace{0.2em}}
-
+\newcommand{\entrytwo}[4]{%
+  \noindent
+  \begin{tabulary}\textbf{#1} \hfill #2\\#3\\#4
+  \end{tabulary}\vspace{0.5em}
+}
 
