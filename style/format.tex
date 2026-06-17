@@ -20,3 +20,16 @@
 
 
 \newcommand{\entryeduc}[4]{\textbf{#1} \hfill #2\\#3\\#4\\}
+
+\newcommand{\timedonut}{%
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \fill[cvlight] (0,0) circle (1.2);
+  \fill[white] (0,0) circle (0.65);
+  \fill[cvblue] (0,0) -- (90:1.2) arc (90:-40:1.2) -- cycle;
+  \fill[SkyBlue] (0,0) -- (-40:1.2) arc (-40:-140:1.2) -- cycle;
+  \fill[cyan!50] (0,0) -- (-140:1.2) arc (-140:-250:1.2) -- cycle;
+  \fill[blue!40] (0,0) -- (-250:1.2) arc (-250:90:1.2) -- cycle;
+\end{tikzpicture}
+\end{center}
+}
