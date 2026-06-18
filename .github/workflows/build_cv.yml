@@ -24,7 +24,7 @@ jobs:
           root_file: ${{ matrix.file }}
           compiler: latexmk
           latexmk_use_xelatex: true
-          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
+          args: -interaction=nonstopmode -halt-on-error -file-line-error
       - uses: actions/upload-artifact@v5
         with:
           name: ${{ matrix.name }}
