@@ -11,13 +11,14 @@
 \newcommand{\entryexp}[5]{%
   \noindent
   \begin{tabularx}{\linewidth}{@{}p{1.5cm}X@{}}
-    \raisebox{1ex-\height}[0pt][0pt]{\includegraphics[width=1.5cm]{#5}} &
-    \\ \textbf{#1} \hfill #2\\[-0.1em]
-    & #3\\
-    & \textit{#4}
+    \includegraphics[width=1.5cm]{#5} &
+    \begin{minipage}[t]{\linewidth}
+      \textbf{#1} \hfill #2\\[-0.1em]
+      #3\\
+      \textit{#4}
+    \end{minipage}
   \end{tabularx}\vspace{0.5em}
 }
-
 
 \newcommand{\entryeduc}[4]{\textbf{#1} \hfill #2\\#3\\#4\\}
 
