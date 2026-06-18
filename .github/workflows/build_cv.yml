@@ -23,8 +23,10 @@ jobs:
         with:
           root_file: ${{ matrix.file }}
           compiler: latexmk
-          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
+          latexmk_use_xelatex: true
+          args: -interaction=nonstopmode -halt-on-error -file-line-error
       - uses: actions/upload-artifact@v5
         with:
           name: ${{ matrix.name }}
           path: ${{ matrix.name }}.pdf
+
